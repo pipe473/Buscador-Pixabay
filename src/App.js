@@ -48,6 +48,8 @@ const paginaAnterior = () => {
 const paginaSiguiente = () => {
   const nuevaPaginaActual = paginaactual + 1;
 
+  if (nuevaPaginaActual > totalpaginas) return;
+
   guardarPaginaActual(nuevaPaginaActual);
 }
 
