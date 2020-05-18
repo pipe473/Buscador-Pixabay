@@ -44,6 +44,13 @@ const paginaAnterior = () => {
   
 }
 
+// Definir la pagina siguiente
+const paginaSiguiente = () => {
+  const nuevaPaginaActual = paginaactual + 1;
+
+  guardarPaginaActual(nuevaPaginaActual);
+}
+
   return ( 
     <div className="container">
       <div className="jumbotron">
@@ -68,6 +75,7 @@ const paginaAnterior = () => {
             <button
               type="button"
               className="btn btn-info"
+              onClick={paginaSiguiente}
               >Siguiente &raquo;</button>
       </div>
     </div>
