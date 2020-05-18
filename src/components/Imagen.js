@@ -15,7 +15,12 @@ const Imagen = ({imagen}) => {
                     <p className="card-text">{views} Vistas</p>
                 </div>
                 <div className="card-footer">
-
+                    <a
+                        href={largeImageURL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="btn btn-primary btn-block"
+                    >Ver Imagen</a>
                 </div>
             </div>
         </div>
