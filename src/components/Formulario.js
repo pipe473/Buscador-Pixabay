@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 
 const Formulario = () => {
+
+const [palabra, guardarPalabra] = useState('');
+
     return ( 
         <form>
             <div className="row">
@@ -10,6 +13,7 @@ const Formulario = () => {
                         type="text"
                         className="form-control form-control-lg"
                         placeholder="Busca una imagen, ejemplo: futbol o café"
+                        onChange={ e => guardarPalabra(e.target.value)}
 
                     />
                 </div>
