@@ -7,11 +7,20 @@ function App() {
 const [ busqueda, guardarBusqueda ] = useState('');
 
 useEffect(() => {
-  if (busqueda === '') return;
+  const consultarAPI = async () => {
+      if (busqueda === '') return;
 
-  const imagenesPorpagina = 30;
-  const key = '16608388-a7a65b8c57d66f929e5c109af';
-  const url = `https://pixabay.com/api/?key=${key}&q=${busqueda}&per_page=${imagenesPorpagina}`;
+    const imagenesPorpagina = 30;
+    const key = '16608388-a7a65b8c57d66f929e5c109af';
+    const url = `https://pixabay.com/api/?key=${key}&q=${busqueda}&per_page=${imagenesPorpagina}`;
+
+    const respuesta = await fetch(url);
+    const resultado = await respuesta.json();
+
+    console.log(resultado);
+    
+  }
+  consultarAPI();
 
 }, [busqueda])
 
