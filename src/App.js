@@ -17,7 +17,7 @@ useEffect(() => {
     const respuesta = await fetch(url);
     const resultado = await respuesta.json();
 
-    console.log(resultado);
+    guardarBusqueda(resultado.hits);
     
   }
   consultarAPI();
