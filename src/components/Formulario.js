@@ -4,6 +4,20 @@ import React, { useState } from 'react';
 const Formulario = () => {
 
 const [palabra, guardarPalabra] = useState('');
+const [error, guardarError] = useState(false);
+
+const buscarImagenes = e => {
+    e.preventDefault();
+
+    // Validar
+    if (palabra.trim() === '') {
+        guardarError(true);
+        return;
+    }
+
+    // Enviar el termino de búsqueda hacia el componente principal
+
+}
 
     return ( 
         <form>
