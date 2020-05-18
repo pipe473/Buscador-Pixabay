@@ -11,8 +11,7 @@ useEffect(() => {
 
   const imagenesPorpagina = 30;
   const key = '16608388-a7a65b8c57d66f929e5c109af';
-  const url = `https://pixabay.com/api/?key=${key}&q=yellow
-            +flowers&image_type=photo`;
+  const url = `https://pixabay.com/api/?key=${key}&q=${busqueda}`;
 
 }, [busqueda])
 
