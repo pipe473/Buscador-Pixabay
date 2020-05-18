@@ -47,6 +47,16 @@ useEffect(() => {
           <ListadoImagenes 
             imagenes={imagenes}
           />
+
+          <button
+            type="button"
+            className="btn btn-info mr-1"
+            >&laquo; Anterior </button>
+
+            <button
+              type="button"
+              className="btn btn-info"
+              >Siguiente &raquo;</button>
       </div>
     </div>
    );
