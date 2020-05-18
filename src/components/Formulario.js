@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Error from './Error';
 
 
 const Formulario = () => {
@@ -20,7 +21,9 @@ const buscarImagenes = e => {
 }
 
     return ( 
-        <form>
+        <form
+            onSubmit={buscarImagenes}
+        >
             <div className="row">
                 <div className="form-group col-md-8">
                     <input
@@ -40,6 +43,8 @@ const buscarImagenes = e => {
                     />
                 </div>
             </div>
+
+            { error ? <Error mensaje="Agrega una palabra para la búsqueda" /> : null }
         </form>
      );
 }
