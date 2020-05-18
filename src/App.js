@@ -38,6 +38,8 @@ useEffect(() => {
 const paginaAnterior = () => {
   const nuevaPaginaActual = paginaactual - 1;
 
+  if (nuevaPaginaActual === 0) return;
+
   guardarPaginaActual(nuevaPaginaActual);
   
 }
