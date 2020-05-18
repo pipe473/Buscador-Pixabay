@@ -33,6 +33,15 @@ useEffect(() => {
 
 }, [busqueda])
 
+
+// Definir la página anterior
+const paginaAnterior = () => {
+  const nuevaPaginaActual = paginaactual - 1;
+
+  guardarPaginaActual(nuevaPaginaActual);
+  
+}
+
   return ( 
     <div className="container">
       <div className="jumbotron">
@@ -51,6 +60,7 @@ useEffect(() => {
           <button
             type="button"
             className="btn btn-info mr-1"
+            onClick={paginaAnterior}
             >&laquo; Anterior </button>
 
             <button
