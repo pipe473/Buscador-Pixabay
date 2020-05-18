@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Error from './Error';
 
 
-const Formulario = () => {
+const Formulario = ({guardarBusqueda}) => {
 
 const [palabra, guardarPalabra] = useState('');
 const [error, guardarError] = useState(false);
@@ -16,7 +16,10 @@ const buscarImagenes = e => {
         return;
     }
 
+    guardarError(false);
+
     // Enviar el termino de búsqueda hacia el componente principal
+    guardarBusqueda(palabra);
 
 }
 
