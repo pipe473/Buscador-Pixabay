@@ -73,14 +73,17 @@ const paginaSiguiente = () => {
               type="button"
               className="btn btn-info mr-1"
               onClick={paginaAnterior}
-              >&laquo; Anterior </button>
+            >&laquo; Anterior </button>
           )}
 
-            <button
-              type="button"
-              className="btn btn-info"
-              onClick={paginaSiguiente}
+            { (paginaactual === totalpaginas) ? null : (
+              <button
+                type="button"
+                className="btn btn-info"
+                onClick={paginaSiguiente}
               >Siguiente &raquo;</button>
+            )}
+
       </div>
     </div>
    );
