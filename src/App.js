@@ -16,7 +16,7 @@ useEffect(() => {
 
     const imagenesPorpagina = 30;
     const key = '16608388-a7a65b8c57d66f929e5c109af';
-    const url = `https://pixabay.com/api/?key=${key}&q=${busqueda}&per_page=${imagenesPorpagina}`;
+    const url = `https://pixabay.com/api/?key=${key}&q=${busqueda}&per_page=${imagenesPorpagina}&page=${paginaactual}`;
 
     const respuesta = await fetch(url);
     const resultado = await respuesta.json();
@@ -27,11 +27,14 @@ useEffect(() => {
     const calcularTotalPaginas = Math.ceil(resultado.totalHits / imagenesPorpagina );
     guardarTotalPaginas(calcularTotalPaginas);
     
+    // Mover la pantalla hacia arriba
+    const jumbotron = document.querySelector('.jumbotron');
+    jumbotron.scrollIntoView({ behavior: 'smooth' })
 
   }
   consultarAPI();
 
-}, [busqueda])
+}, [busqueda, paginaactual])
 
 
 // Definir la página anterior
